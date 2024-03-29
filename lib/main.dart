@@ -45,13 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const Text(
-              'Nomor Kelompok:  [isi no kelompok]',
+              'Nomor Kelompok: 24',
             ),
             const Text(
-              'Mhs 1:  [isi nim, nama]',
+              'Mhs 1:  2202074, Ahmad Taufiq Hidayat',
             ),
             const Text(
-              'Mhs 2:  [isi nim, nama]',
+              'Mhs 2: 2203903, Themy Sabri Syuhada',
             ),
             Container(
               margin: const EdgeInsets.all(10),
