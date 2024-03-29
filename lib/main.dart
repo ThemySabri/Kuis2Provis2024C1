@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+dynamic selectedGender;
+
 void main() {
   runApp(const MyApp());
 }
@@ -48,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Mhs 1:  2202074, Ahmad Taufiq Hidayat',
             ),
             const Text(
-              'Mhs 2:  2203903, Themy Sabri Syuhada',
+              'Mhs 2: 2203903, Themy Sabri Syuhada',
             ),
             Container(
               margin: const EdgeInsets.all(10),
@@ -84,10 +86,508 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget soalNo1() {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          backgroundColor: const Color(0xFF233C5F),
         ),
-        body: const Text("ini jawaban no 1"));
+        body: Container(
+          width: 360,
+          height: 800,
+          clipBehavior: Clip.antiAlias,
+          padding: const EdgeInsets.only(bottom: 0),
+          decoration: const BoxDecoration(color: Colors.white),
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                top: 0,
+                child: Container(
+                  width: 360,
+                  height: 190,
+                  decoration: const ShapeDecoration(
+                    color: Color(0xFF233C5F),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 30,
+                top: 66,
+                child: Text(
+                  'Profil',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 26,
+                top: 139,
+                child: Container(
+                  width: 307,
+                  height: 640,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        width: 1.50,
+                        strokeAlign: BorderSide.strokeAlignOutside,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 48,
+                top: 162,
+                child: Container(
+                  width: 86,
+                  height: 86,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        width: 1,
+                        strokeAlign: BorderSide.strokeAlignOutside,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 52,
+                top: 166,
+                child: Text(
+                  'Masukkan Foto \n\n\nProfil',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 173,
+                top: 162,
+                child: Text(
+                  'Nama Panjang',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFF233C5F),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 48,
+                top: 281,
+                child: Text(
+                  'NIK',
+                  style: TextStyle(
+                    color: Color(0xFF233C5F),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 48,
+                top: 453,
+                child: Text(
+                  'Email',
+                  style: TextStyle(
+                    color: Color(0xFF233C5F),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 48,
+                top: 540,
+                child: Text(
+                  'Alamat Rumah',
+                  style: TextStyle(
+                    color: Color(0xFF233C5F),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 48,
+                top: 368,
+                child: Text(
+                  'Tanggal Lahir',
+                  style: TextStyle(
+                    color: Color(0xFF233C5F),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 48,
+                top: 368,
+                child: Text(
+                  'Tanggal Lahir',
+                  style: TextStyle(
+                    color: Color(0xFF233C5F),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 195,
+                top: 368,
+                child: Text(
+                  'Gender',
+                  style: TextStyle(
+                    color: Color(0xFF233C5F),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 48,
+                top: 223,
+                child: Container(
+                  width: 86,
+                  height: 25,
+                  decoration: const ShapeDecoration(
+                    color: Color(0xFF233C5F),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 75,
+                top: 230,
+                child: SizedBox(
+                  width: 32,
+                  height: 12,
+                  child: Text(
+                    'Ubah',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 173,
+                top: 188,
+                child: Container(
+                  width: 137,
+                  height: 54,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        width: 1.50,
+                        strokeAlign: BorderSide.strokeAlignOutside,
+                        color: Color(0xFF919191),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 43,
+                top: 306,
+                child: Container(
+                  width: 273,
+                  height: 40,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        width: 1.50,
+                        strokeAlign: BorderSide.strokeAlignOutside,
+                        color: Color(0xFF919191),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 43,
+                top: 478,
+                child: Container(
+                  width: 273,
+                  height: 40,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        width: 1.50,
+                        strokeAlign: BorderSide.strokeAlignOutside,
+                        color: Color(0xFF919191),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 43,
+                top: 565,
+                child: Container(
+                  width: 273,
+                  height: 40,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        width: 1.50,
+                        strokeAlign: BorderSide.strokeAlignOutside,
+                        color: Color(0xFF919191),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 43,
+                top: 394,
+                child: Container(
+                  width: 118,
+                  height: 40,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        width: 1.50,
+                        strokeAlign: BorderSide.strokeAlignOutside,
+                        color: Color(0xFF919191),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 192,
+                top: 394,
+                child: Container(
+                  width: 124,
+                  height: 40,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        width: 1.50,
+                        strokeAlign: BorderSide.strokeAlignOutside,
+                        color: Color(0xFF919191),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 180,
+                top: 209,
+                child: Text(
+                  'Masukkan nama lengkap',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xBF919191),
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 58,
+                top: 325,
+                child: Text(
+                  'Masukkan NIK anda',
+                  style: TextStyle(
+                    color: Color(0xBF919191),
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 58,
+                top: 497,
+                child: Text(
+                  'Masukkan email anda',
+                  style: TextStyle(
+                    color: Color(0xBF919191),
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 58,
+                top: 584,
+                child: Text(
+                  'Masukkan alamat anda',
+                  style: TextStyle(
+                    color: Color(0xBF919191),
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 52,
+                top: 413,
+                child: Text(
+                  'DD/MM/YYYY',
+                  style: TextStyle(
+                    color: Color(0xBF919191),
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              DropdownButton<String>(
+                value: selectedGender,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    selectedGender = newValue!;
+                  });
+                },
+                items: <String>['Perempuan', 'Laki-laki']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              const Positioned(
+                left: 205,
+                top: 407,
+                child: Text(
+                  'Perempuan',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 134,
+                top: 404,
+                child: SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: 20,
+                          height: 20,
+                          decoration:
+                              const BoxDecoration(color: Color(0xFFD9D9D9)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 293,
+                top: 406,
+                child: SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: 20,
+                          height: 20,
+                          decoration:
+                              const BoxDecoration(color: Color(0xFFD9D9D9)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 92,
+                top: 674,
+                child: Container(
+                  width: 175,
+                  height: 40,
+                  decoration: ShapeDecoration(
+                    color: const Color(0xFF233C5F),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(13),
+                    ),
+                  ),
+                ),
+              ),
+              const Positioned(
+                left: 152,
+                top: 692,
+                child: Text(
+                  'Simpan',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ));
   }
+
+  // jawaban no 2
 
   Widget soalNo2() {
     return SoalNo2Page();

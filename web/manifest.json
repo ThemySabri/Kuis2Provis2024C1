@@ -1,6 +1,6 @@
 {
-    "name": "kuis_flutter",
-    "short_name": "kuis_flutter",
+    "name": "kuis",
+    "short_name": "kuis",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
