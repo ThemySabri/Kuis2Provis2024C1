@@ -15,3 +15,15 @@ Data Anggota 2
 - Kelas: C1
 
 ## Screenshots
+
+### Tampilan Awal
+
+![tampilan awal](image.png)
+
+### Soal Nomor 1
+
+![nomor 1](image-1.png)
+
+### Soal Nomor 2
+
+![nomor 2](image-2.png)

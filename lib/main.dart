@@ -166,11 +166,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 left: 52,
                 top: 166,
                 child: Text(
-                  'Masukkan Foto \n\n\nProfil',
+                  'Masukkan Foto \nProfil',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 12,
+                    fontSize: 10.5,
                     fontWeight: FontWeight.w400,
                     height: 0,
                   ),
@@ -433,7 +433,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const Positioned(
                 left: 58,
-                top: 325,
+                top: 320,
                 child: Text(
                   'Masukkan NIK anda',
                   style: TextStyle(
@@ -446,7 +446,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const Positioned(
                 left: 58,
-                top: 497,
+                top: 492,
                 child: Text(
                   'Masukkan email anda',
                   style: TextStyle(
@@ -459,7 +459,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const Positioned(
                 left: 58,
-                top: 584,
+                top: 579,
                 child: Text(
                   'Masukkan alamat anda',
                   style: TextStyle(
@@ -472,7 +472,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const Positioned(
                 left: 52,
-                top: 413,
+                top: 408,
                 child: Text(
                   'DD/MM/YYYY',
                   style: TextStyle(
@@ -483,21 +483,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              DropdownButton<String>(
-                value: selectedGender,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedGender = newValue!;
-                  });
-                },
-                items: <String>['Perempuan', 'Laki-laki']
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-              ),
+              // DropdownButton<String>(
+              //   value: selectedGender,
+              //   onChanged: (String? newValue) {
+              //     setState(() {
+              //       selectedGender = newValue!;
+              //     });
+              //   },
+              //   items: <String>['Perempuan', 'Laki-laki']
+              //       .map<DropdownMenuItem<String>>((String value) {
+              //     return DropdownMenuItem<String>(
+              //       value: value,
+              //       child: Text(value),
+              //     );
+              //   }).toList(),
+              // ),
               const Positioned(
                 left: 205,
                 top: 407,
@@ -571,7 +571,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const Positioned(
                 left: 152,
-                top: 692,
+                top: 687,
                 child: Text(
                   'Simpan',
                   style: TextStyle(
@@ -924,19 +924,27 @@ class _SoalNo2PageState extends State<SoalNo2Page> {
           },
           items: [
             BottomNavigationBarItem(
-              icon: _currentIndex == 0 ? _buildIconWithBackground(Icons.book) : const Icon(Icons.book),
+              icon: _currentIndex == 0
+                  ? _buildIconWithBackground(Icons.book)
+                  : const Icon(Icons.book),
               label: 'Pesanan Saya', // Editable label
             ),
             BottomNavigationBarItem(
-              icon: _currentIndex == 1 ? _buildIconWithBackground(Icons.my_location) : const Icon(Icons.my_location),
+              icon: _currentIndex == 1
+                  ? _buildIconWithBackground(Icons.my_location)
+                  : const Icon(Icons.my_location),
               label: 'Lokasi', // Editable label
             ),
             BottomNavigationBarItem(
-              icon: _currentIndex == 2 ? _buildIconWithBackground(Icons.phone) : const Icon(Icons.phone),
+              icon: _currentIndex == 2
+                  ? _buildIconWithBackground(Icons.phone)
+                  : const Icon(Icons.phone),
               label: 'Kontak Kami', // Editable label
             ),
             BottomNavigationBarItem(
-              icon: _currentIndex == 3 ? _buildIconWithBackground(Icons.account_circle_sharp) : const Icon(Icons.account_circle_sharp),
+              icon: _currentIndex == 3
+                  ? _buildIconWithBackground(Icons.account_circle_sharp)
+                  : const Icon(Icons.account_circle_sharp),
               label: 'Akun', // Editable label
             ),
           ],
@@ -960,7 +968,8 @@ Widget _buildIconWithBackground(IconData icon) {
         width: 50,
         decoration: BoxDecoration(
           color: const Color(0xFFF5C341), // Color of the selected indicator
-          borderRadius: BorderRadius.circular(15), // Adjust the radius as needed
+          borderRadius:
+              BorderRadius.circular(15), // Adjust the radius as needed
         ),
         child: Center(
           child: Icon(
