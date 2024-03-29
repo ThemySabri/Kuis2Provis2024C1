@@ -5,7 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   // This widget is the root of your application.
   @override
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title});
 
   final String title;
 
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  //jaawaban no 1
+  // Jawaban no 1
   Widget soalNo1() {
     return Scaffold(
         appBar: AppBar(
@@ -89,13 +89,347 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: const Text("ini jawaban no 1"));
   }
+  
 
-  //jaawaban no 2
   Widget soalNo2() {
+    
+    int _currentIndex = 0;
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFFADC4B),
+        elevation: 0,
+        titleSpacing: 0,
+        title: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: SizedBox(
+                height: 45,
+                width: 250,
+                child: Image.network(
+                  'https://fastly.picsum.photos/id/357/600/200.jpg?hmac=qX5qCu2B_PqB5O7vcBGOIn11NuNCrPLp687CRDXd9Ok',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const Spacer(),
+            IconButton(
+              icon: const Icon(Icons.shopping_cart),
+              onPressed: () {},
+            ),
+          ],
         ),
-        body: const Text("ini jawaban no 2"));
+      ),
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Column(
+              children: [
+                Container(
+                  height: 190,
+                  width: 395,
+                  decoration: const BoxDecoration(
+                    color:Color(0xFFFADC4B),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.zero,
+                      bottom: Radius.circular(20),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Positioned(
+            top: 80,
+            left: 40,
+            right: 0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Hai Budi Martami",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  "Tetap Jaga Kesehatan Ya",
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 10,
+            right: 40,
+            child: SizedBox(
+              height: 150,
+              width: 80,
+              child: Image.network(
+                'https://fastly.picsum.photos/id/669/200/200.jpg?hmac=lAa_bMRK0BRBCTEvl1acVqTfEDrXQc0yNwi683-13cE', // Placeholder image URL
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 170,
+            left: 40,
+            right: 40,
+            child: Column(
+              children: [
+                Container(
+                  height: 40,
+                  width: 250,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFE1DCE6),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xFF000000),
+                      width: 1,
+                    ),
+                  ),
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.search),
+                      hintText: 'Cari Pemeriksaan Kesehatan',
+                      hintStyle: TextStyle(fontSize: 12),
+                      contentPadding: EdgeInsets.only(bottom: 1),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Positioned(
+            top: 230,
+            left: 20,
+            child: Column(
+              children: [
+                SizedBox(height: 10), // Add spacing between search bar and text
+                Text(
+                  "Layanan Prodiax",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 280,
+            left: 35,
+            child: Column(
+              children: [
+                Container(
+                  height: 70,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF5F5F5),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xFFE7E7E7),
+                      width: 2,
+                    ),
+                  ),
+                  child: const Center(
+                    child: Icon(
+                      Icons.border_color,
+                      size: 50,
+                      color: Color(0xFFF09B37),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  "Cari dan Pesan",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 280,
+            left: 155,
+            child: Column(
+              children: [
+                Container(
+                  height: 70,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF5F5F5),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xFFE7E7E7),
+                      width: 2,
+                    ),
+                  ),
+                  child: const Center(
+                    child: Icon(
+                      Icons.chat,
+                      size: 50,
+                      color: Color(0xFFF09B37),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  "Chat dengan CS",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 280,
+            left: 270,
+            child: Column(
+              children: [
+                Container(
+                  height: 70,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF5F5F5),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xFFE7E7E7),
+                      width: 2,
+                    ),
+                  ),
+                  child: const Center(
+                    child: Icon(
+                      Icons.edit_document,
+                      size: 50,
+                      color: Color(0xFFF09B37),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  "Hasil Pemeriksaan",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 400,
+            left: 20,
+            child: Column(
+              children: [
+                Container(
+                  height: 65,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFFFAEB),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xFFBCBCB6),
+                      width: 2,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Container(
+                          width: 35,
+                          height: 35,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFFFFAEB),
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: const Color(0xFFBCBCB6),
+                              width: 2,
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.add_task,
+                            color: Color(0xFFF0A345),
+                            size: 17,
+                          ),
+                        ),
+                      ),
+                      // Text in the center
+                      const Expanded(
+                        child: Center(
+                          child: Text(
+                            'Gunakan Kode Rujukan Dokter',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Play arrow icon
+                      const Padding(
+                        padding: EdgeInsets.only(right: 15),
+                        child: Icon(
+                          Icons.play_arrow,
+                          color: Color(0xFFF0A345),
+                          size: 25,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            label: 'Pesanan Saya', // Editable label
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.my_location),
+            label: 'Lokasi', // Editable label
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.phone),
+            label: 'Kontak Kami', // Editable label
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_sharp),
+            label: 'Akun', // Editable label
+          ),
+        ],
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        showUnselectedLabels: true,
+      ),
+    );
   }
 }
