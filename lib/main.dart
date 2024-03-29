@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -89,11 +88,24 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: const Text("ini jawaban no 1"));
   }
-  
 
   Widget soalNo2() {
-    
-    int _currentIndex = 0;
+    return SoalNo2Page();
+  }
+}
+
+class SoalNo2Page extends StatefulWidget {
+  const SoalNo2Page({Key? key}) : super(key: key);
+
+  @override
+  _SoalNo2PageState createState() => _SoalNo2PageState();
+}
+
+class _SoalNo2PageState extends State<SoalNo2Page> {
+  int _currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFFADC4B),
@@ -132,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 190,
                   width: 395,
                   decoration: const BoxDecoration(
-                    color:Color(0xFFFADC4B),
+                    color: Color(0xFFFADC4B),
                     borderRadius: BorderRadius.vertical(
                       top: Radius.zero,
                       bottom: Radius.circular(20),
@@ -399,37 +411,64 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Pesanan Saya', // Editable label
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.my_location),
-            label: 'Lokasi', // Editable label
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.phone),
-            label: 'Kontak Kami', // Editable label
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_sharp),
-            label: 'Akun', // Editable label
-          ),
-        ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
-        selectedFontSize: 12,
-        unselectedFontSize: 12,
-        showUnselectedLabels: true,
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Color(0xFFF0EBF5),
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: _currentIndex == 0 ? _buildIconWithBackground(Icons.book) : const Icon(Icons.book),
+              label: 'Pesanan Saya', // Editable label
+            ),
+            BottomNavigationBarItem(
+              icon: _currentIndex == 1 ? _buildIconWithBackground(Icons.my_location) : const Icon(Icons.my_location),
+              label: 'Lokasi', // Editable label
+            ),
+            BottomNavigationBarItem(
+              icon: _currentIndex == 2 ? _buildIconWithBackground(Icons.phone) : const Icon(Icons.phone),
+              label: 'Kontak Kami', // Editable label
+            ),
+            BottomNavigationBarItem(
+              icon: _currentIndex == 3 ? _buildIconWithBackground(Icons.account_circle_sharp) : const Icon(Icons.account_circle_sharp),
+              label: 'Akun', // Editable label
+            ),
+          ],
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black,
+          selectedFontSize: 12,
+          unselectedFontSize: 12,
+          showUnselectedLabels: true,
+          type: BottomNavigationBarType.fixed,
+        ),
       ),
     );
   }
+}
+
+Widget _buildIconWithBackground(IconData icon) {
+  return Stack(
+    children: [
+      Container(
+        height: 27,
+        width: 50,
+        decoration: BoxDecoration(
+          color: const Color(0xFFF5C341), // Color of the selected indicator
+          borderRadius: BorderRadius.circular(15), // Adjust the radius as needed
+        ),
+        child: Center(
+          child: Icon(
+            icon,
+            color: Colors.black, // Color of the icon
+          ),
+        ),
+      ),
+    ],
+  );
 }
